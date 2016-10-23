@@ -1,10 +1,37 @@
 <html ng-app="arrayApp">
 	<head>
-		<link rel="stylesheet" href="style.css"></link>
+		<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
 	</head>
 	<body ng-controller="arrayController">
-	
+      <table class="u-full-width">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Date Employed</th>
+            <th>Phone</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr ng-repeat="employee in employees">
+            <td>{{ employee.name }}</td>
+            <td>{{ employee.email }}</td>
+            <td>{{ employee.dateEmployed }}</td>
+            <td>{{ employee.phone }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!--<ul ng-repeat="employee in employees"> {{ employee.name }}-->
+        <!--<li>{{ employee.phone }}</li>-->
+        <!--<li>{{ employee.email }}</li>-->
+        <!--<br>-->
+      <!--</ul>-->
+
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    <!--<script src="https://cdn.rawgit.com/esvit/ng-table/1.0.0/dist/ng-table.js"></script>-->
 		<script src="app.js"></script>
 		<script src="controller.js"></script>
 		<script src="service.js"></script>

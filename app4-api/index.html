@@ -1,7 +1,23 @@
 <html ng-app="apiApp">
-	<body>
-		
-				<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+	<body ng-controller="apiCtrl">
+    <div class="wrapper">
+      <div class="controls">
+        <button ng-click="getData('people')">People</button>
+        <button ng-click="getData('species')">Species</button>
+        <!--<button ng-click="getData('films')">Films</button> Need to loop display if btn for films is selected.--->
+        <button ng-click="getData('planets')">Planets</button>
+        <button ng-click="getData('vehicles')">Vehicles</button>
+        <button ng-click="getData('starships')">Ships</button>
+      </div>
+      <div>
+        <ul ng-repeat="item in warsData.results">
+          <li class="name">{{item.name}}</li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
 		<script src="app.js"></script>
 		<script src="controller.js"></script>
 		<script src="service.js"></script>

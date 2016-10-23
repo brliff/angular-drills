@@ -1,9 +1,38 @@
-<html>
-	<body>
-		Something
-				<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
-		<script src="app.js"></script>
-		<script src="controller.js"></script>
-		<script src="service.js"></script>
-	</body>
+<html ng-app="app3">
+<head>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+</head>
+<body ng-controller="arrayController">
+<table class="u-full-width">
+
+	<thead>
+  <div class="row">
+    <div class="three columns">
+      <label for="searchInput">Search:</label>
+      <input ng-model="searchText" class="u-full-width" placeholder="Search"0 id="searchInput">
+    </div>
+  </div>
+	<tr>
+		<th>Name</th>
+		<th>Email</th>
+		<th>Date Employed</th>
+		<th>Phone</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr ng-repeat="employee in employees | filter: searchText">
+		<td>{{ employee.name }}</td>
+		<td>{{ employee.email }}</td>
+		<td>{{ employee.dateEmployed }}</td>
+		<td>{{ employee.phone }}</td>
+	</tr>
+	</tbody>
+</table>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+<script src="app.js"></script>
+<script src="controller.js"></script>
+<script src="service.js"></script>
+</body>
 </html>
